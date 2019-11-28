@@ -14,7 +14,7 @@ module.exports = (client, message) => {
   const cmd = client.commands[command];
 
   if (!cmd) {
-    return;
+    return message.channel.send("Command not found");
   }
 
   cmd(client, message, args);
