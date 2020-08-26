@@ -2,16 +2,22 @@
   "name": "delusions-bot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/main.js",
   "scripts": {
-    "start": "node bot.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/main.js",
+    "build": "npm run pre:build && tsc",
+    "build:watch": "npm run pre:build && tsc --watch",
+    "pre:build": "rimraf dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.5.1",
-    "redis": "^2.8.0"
+    "discord.js": "^11.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.27",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
   }
 }
